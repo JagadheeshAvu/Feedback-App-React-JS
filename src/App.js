@@ -1,4 +1,3 @@
-import {Component} from 'react'
 import Feedback from './components/Feedback'
 
 import './App.css'
@@ -24,26 +23,6 @@ const resources = {
   loveEmojiUrl: 'https://assets.ccbp.in/frontend/react-js/love-emoji-img.png',
 }
 
-class App extends Component {
-  state = {feedbackDetails: resources}
-
-  render() {
-    const {feedbackDetails} = this.state
-    return (
-      <div className="container">
-        <div className="feedback-container">
-          <h1 className="heading">
-            How satisfied are you with our customer support performance?
-          </h1>
-          <ul>
-            {feedbackDetails.map(each => (
-              <Feedback key={each.id} />
-            ))}
-          </ul>
-        </div>
-      </div>
-    )
-  }
-}
+const App = () => <Feedback resources={resources} />
 
 export default App
